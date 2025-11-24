@@ -1,9 +1,9 @@
-@url = http://localhost:8080
+@url = https://shiny-space-funicular-j6x5wvx6xpr3vvr-8080.app.github.dev/
 
 POST {{url}}/auth
 Content-Type: application/json
 
 {
-    "nomeDeUsuario" : "admin",
-    "senha" : "admin"
+    "username" : "admin",
+    "password" : "admin"
 }

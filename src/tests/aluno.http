@@ -1,0 +1,26 @@
+@url = https://shiny-space-funicular-j6x5wvx6xpr3vvr-8080.app.github.dev/alunos
+
+POST {{url}}
+Content-Type: application/json
+
+{
+    "nome": "Erick Cirico",
+    "email": "erick@gmail.com",
+    "telefone": "14999999999",
+    "dataMatricula": "2025-11-25"
+}
+
+###
+GET {{url}}
+
+###
+GET {{url}}/1
+
+###
+PUT {{url}}/1
+Content-Type: application/json
+
+{
+    "nome": "Erick Cirico Atualizado",
+    "dataMatricula": "2025-11-25"
+}

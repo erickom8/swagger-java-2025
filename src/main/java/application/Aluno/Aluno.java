@@ -21,14 +21,15 @@ public class Aluno {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Use Long com 'L' maiúsculo é preferível para IDs
+    private Long id; 
 
     @Column(nullable = false, length = 100)
     private String nome;
 
     @Column(nullable = false, unique = true, length = 100)
-    private String email; // E-mail deve ser único (UNIQUE)
+    private String email;
 
+    @Column(nullable = false)
     private String telefone;
 
     @Column(name = "data_matricula", nullable = false)
