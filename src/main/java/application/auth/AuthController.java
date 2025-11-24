@@ -18,12 +18,12 @@ public class AuthController {
     private TokenService tokenService;
 
     @PostMapping
-    public String login(@RequestBody Usuario usuario) {
+    public String login(@RequestBody User user) {
         UsernamePasswordAuthenticationToken tk =
             new UsernamePasswordAuthenticationToken(
-                usuario.getNomeDeUsuario(), usuario.getSenha());
+                user.getUsername(), user.getPassword());
         authenticationManager.authenticate(tk);
         
-        return tokenService.generateToken(usuario);
+        return tokenService.generateToken(user);
     }
 }
