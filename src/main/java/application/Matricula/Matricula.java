@@ -24,26 +24,28 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Matricula {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
-    @Column(name = "data_matricula", nullable = false)
+    @Column(nullable = false)
     private LocalDate dataMatricula;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false)
     private String status;
 
-
     @ManyToOne 
-    @JoinColumn(name = "aluno_id", nullable = false) // Nome da coluna FK no banco
+    @JoinColumn(name = "aluno_id", nullable = false)
     private Aluno aluno;
-
-
     @ManyToOne
-    @JoinColumn(name = "curso_id", nullable = false) // Nome da coluna FK no banco
+    @JoinColumn(name = "curso_id", nullable = false)
     private Curso curso;
-    
+
+    public Matricula(LocalDate dataMatricula, String status, Aluno aluno, Curso curso){
+        this.dataMatricula = dataMatricula;
+        this.status = status;
+        this.aluno = aluno;
+        this.curso = curso;
+    }
 
 }

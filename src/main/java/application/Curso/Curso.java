@@ -23,7 +23,7 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String nome;
 
     @Column(nullable = false, length = 255)
@@ -32,7 +32,7 @@ public class Curso {
     @Column(nullable = false)
     private Integer cargaHoraria;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false)
     private String status;
 
     @Column(nullable = false)
