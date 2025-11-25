@@ -1,0 +1,7 @@
+@url = http://shiny-space-funicular-j6x5wvx6xpr3vvr-8080.app.github.dev/
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJNYXRyw61jdWxhcyBBUEkiLCJzdWIiOiJhZG1pbiIsImV4cCI6MTc2NDA1NzkyNX0.5HczzjCRut5Njs1IlgOZu6N433VthCEhiJv7bao1ras
+
+
+GET {{url}}/swagger-ui/**
+Authorization:  Bearer {{token}}
