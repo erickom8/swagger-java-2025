@@ -1,0 +1,30 @@
+@url = https://shiny-space-funicular-j6x5wvx6xpr3vvr-8080.app.github.dev/matriculas
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJNYXRyw61jdWxhcyBBUEkiLCJzdWIiOiJhZG1pbiIsImV4cCI6MTc2NDA1NzQwN30.0ireYAb7D0OKBp648C2vs-bJ7SISH2bJUkUZKf9OTAc
+
+POST {{url}}
+Authorization:  Bearer {{token}}
+Content-Type: application/json
+
+{
+    "status": "ATIVO",
+    "alunoId": 2,
+    "cursoId": 2
+}
+
+### 
+GET {{url}}
+Authorization:  Bearer {{token}}
+
+
+### 
+PUT {{url}}/2
+Authorization:  Bearer {{token}}
+Content-Type: application/json
+
+{
+    "status": "INATIVO",
+    "alunoId": 2,
+    "cursoId": 2
+}
+

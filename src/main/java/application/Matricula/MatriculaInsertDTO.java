@@ -2,7 +2,7 @@ package application.Matricula;
 
 import java.time.LocalDate;
 
-public record MatriculaInsertDTO(LocalDate dataMatricula, String status, long aluno_id, long curso_id) {
+public record MatriculaInsertDTO(LocalDate dataMatricula, String status, long alunoId, long cursoId) {
     public MatriculaInsertDTO(Matricula matricula){
         this(matricula.getDataMatricula(),
             matricula.getStatus(),

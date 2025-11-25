@@ -1,5 +1,6 @@
 package application.Matricula;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,18 +29,18 @@ public class MatriculaService {
     }
 
     public MatriculaDTO insert(MatriculaInsertDTO dados){
-        Optional<Aluno> alunoResultado = alunoRepo.findById(dados.aluno_id());
-        Optional<Curso> cursoResultado = cursoRepo.findById(dados.curso_id());
+        Optional<Aluno> alunoResultado = alunoRepo.findById(dados.alunoId());
+        Optional<Curso> cursoResultado = cursoRepo.findById(dados.cursoId());
     
         String errorMessage = "Dados não encontrados para: ";
         boolean hasError = false;
 
         if (alunoResultado.isEmpty()) {
-            errorMessage +=  "alunoID=" + dados.aluno_id() + " ";
+            errorMessage +=  "alunoID=" + dados.alunoId() + " ";
             hasError = true;
         }
         if (cursoResultado.isEmpty()) {
-            errorMessage += "cursoID=" + dados.curso_id() + " ";
+            errorMessage += "cursoID=" + dados.cursoId() + " ";
             hasError = true;
         }
         if (hasError) {
@@ -49,7 +50,7 @@ public class MatriculaService {
         }
 
         Matricula newMatricula = new Matricula();
-        newMatricula.setDataMatricula(dados.dataMatricula());
+        newMatricula.setDataMatricula(LocalDate.now());
         newMatricula.setStatus(dados.status());
         newMatricula.setAluno(alunoResultado.get());
         newMatricula.setCurso(cursoResultado.get());
@@ -70,18 +71,18 @@ public class MatriculaService {
                 HttpStatus.NOT_FOUND, "Matricula not found for id=" + id
             );
         }
-        Optional<Aluno> alunoResultado = alunoRepo.findById(dados.aluno_id());
-        Optional<Curso> cursoResultado = cursoRepo.findById(dados.curso_id());
+        Optional<Aluno> alunoResultado = alunoRepo.findById(dados.alunoId());
+        Optional<Curso> cursoResultado = cursoRepo.findById(dados.cursoId());
 
         String errorMessage = "Data not found for: ";
         boolean hasError = false;
 
         if (alunoResultado.isEmpty()) {
-            errorMessage += "alunoID=" + dados.aluno_id() + " ";
+            errorMessage += "alunoID=" + dados.alunoId() + " ";
             hasError = true;
         }
         if (cursoResultado.isEmpty()) {
-            errorMessage += "cursoID=" + dados.curso_id() + " ";
+            errorMessage += "cursoID=" + dados.cursoId() + " ";
             hasError = true;
         }
         if (hasError) {

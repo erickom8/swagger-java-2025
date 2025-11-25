@@ -7,11 +7,11 @@ Authorization:  Bearer {{token}}
 Content-Type: application/json
 
 {
-    "nome": "Big Data no Agronegócio",
-    "descricao": "Curso BDAg",
-    "cargaHoraria": 2400,
+    "nome": "Sistemas Inteligentes",
+    "descricao": "Curso SI",
+    "cargaHoraria": 3000,
     "status": "ativo",
-    "dataCriacao":"2015-01-01T22:00:00"
+    "dataCriacao":"2025-12-01T22:00:00"
 }
 
 ### 
@@ -33,3 +33,7 @@ Content-Type: application/json
     "descricao": "Curso MAP",
     "dataCriacao": "2012-01-01T22:00:00"
 }
+
+### 
+DELETE {{url}}/3
+Authorization:  Bearer {{token}}
