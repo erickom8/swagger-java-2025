@@ -11,19 +11,19 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 @Service
 public class AppUserDataService implements UserDetailsService {
     @Autowired
-    private UserRepository userRepo;
+    private UsuarioRepository usuarioRepo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> user = userRepo.findByUsername(username);
+        Optional<Usuario> usuario = usuarioRepo.findByNomeUsuario(username);
 
-        if(user.isEmpty()) {
+        if(usuario.isEmpty()) {
             throw new UsernameNotFoundException("Usuário não encontrado");
         }
 
         UserDetails userDetails = org.springframework.security.core.userdetails.User.builder()
-            .username(user.get().getUsername())
-            .password(user.get().getPassword())
+            .username(usuario.get().getNomeUsuario())
+            .password(usuario.get().getSenha())
             .roles("USER")
             .build();
         

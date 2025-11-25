@@ -1,9 +1,12 @@
 @url = https://shiny-space-funicular-j6x5wvx6xpr3vvr-8080.app.github.dev/
 
-POST {{url}}/auth
+POST {{url}}auth
 Content-Type: application/json
 
 {
-    "username" : "admin",
-    "password" : "admin"
+    "nomeUsuario" : "admin",
+    "senha" : "admin"
 }
+
+###
+GET {{url}}public

@@ -19,13 +19,13 @@ public class TokenService {
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
     }
 
-    public String generateToken(User user) {
+    public String generateToken(Usuario usuario) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(this.tokenKey);
 
             return JWT.create()
                 .withIssuer("Matrículas API")
-                .withSubject(user.getUsername())
+                .withSubject(usuario.getNomeUsuario())
                 .withExpiresAt(this.expirationDate())
                 .sign(algorithm);
         } catch (JWTCreationException exception) {

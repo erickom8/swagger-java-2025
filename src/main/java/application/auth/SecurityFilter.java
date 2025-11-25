@@ -38,13 +38,12 @@ public class SecurityFilter extends OncePerRequestFilter {
         String token = this.getToken(request);
 
         if(token != null) {
-            // Realizar a Autenticação
             String subject = tokenService.getSubject(token);
-            UserDetails usuario = userDataService.loadUserByUsername(subject);
+            UserDetails user = userDataService.loadUserByUsername(subject);
 
             UsernamePasswordAuthenticationToken authentication =
                 new UsernamePasswordAuthenticationToken(
-                    usuario, null, usuario.getAuthorities());
+                    user, null, user.getAuthorities());
                     
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }

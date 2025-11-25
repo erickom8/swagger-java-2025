@@ -1,0 +1,35 @@
+@url = https://shiny-space-funicular-j6x5wvx6xpr3vvr-8080.app.github.dev/cursos
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJNYXRyw61jdWxhcyBBUEkiLCJzdWIiOiJhZG1pbiIsImV4cCI6MTc2NDA1NTcwMH0.NUTHZ8moOMzWqgHA-WWiHm4J_wfA_-x7rBUoUcYaP5A
+
+POST {{url}}
+Authorization:  Bearer {{token}}
+Content-Type: application/json
+
+{
+    "nome": "Big Data no Agronegócio",
+    "descricao": "Curso BDAg",
+    "cargaHoraria": 2400,
+    "status": "ativo",
+    "dataCriacao":"2015-01-01T22:00:00"
+}
+
+### 
+GET {{url}}
+Authorization:  Bearer {{token}}
+
+###
+GET {{url}}/2
+Authorization:  Bearer {{token}}
+
+
+###
+PUT {{url}}/2
+Authorization:  Bearer {{token}}
+Content-Type: application/json
+
+{
+    "nome": "Mecanização em Agricultura de Precisão",
+    "descricao": "Curso MAP",
+    "dataCriacao": "2012-01-01T22:00:00"
+}

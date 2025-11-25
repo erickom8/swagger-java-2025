@@ -11,16 +11,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
+@Table(name = "usuarios")
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "username", nullable = false, unique = true)
-    private String username;
-    @Column(name = "password", nullable = false)
-    private String password;
+
+    @Column(name="nome_usuario", nullable = false, unique = true)
+    private String nomeUsuario;
+    
+    @Column(nullable = false)
+    private String senha;
+
 }
